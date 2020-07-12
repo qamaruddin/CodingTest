@@ -12,9 +12,9 @@ namespace ParkingFeeCalculator.API.Controllers
     {
 
         private readonly ILogger<CalculatorController> _logger;
-        private readonly FeeRuleSelectorService _feeRuleSelectorService;
+        private readonly IFeeRuleSelectorService _feeRuleSelectorService;
 
-        public CalculatorController(ILogger<CalculatorController> logger, FeeRuleSelectorService feeRuleSelectorService)
+        public CalculatorController(ILogger<CalculatorController> logger, IFeeRuleSelectorService feeRuleSelectorService)
         {
             _logger = logger;
             _feeRuleSelectorService = feeRuleSelectorService;

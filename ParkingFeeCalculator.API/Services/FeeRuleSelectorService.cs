@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace ParkingFeeCalculator.API.Services
 {
-    public class FeeRuleSelectorService
+    public class FeeRuleSelectorService : IFeeRuleSelectorService
     {
-        private readonly IEnumerable<IParkingFeeCalculatorService> parkingFeeCalculators;
+        private readonly IEnumerable<IParkingFeeCalculatorService> _parkingFeeCalculators;
 
         public FeeRuleSelectorService(IEnumerable<IParkingFeeCalculatorService> parkingFeeCalculators)
         {
-            this.parkingFeeCalculators = parkingFeeCalculators;
+            _parkingFeeCalculators = parkingFeeCalculators;
         }
 
         public double Calculate(DateTime entryTime, DateTime exitTime)
         {
             IParkingFeeCalculatorService applicableRate = null;
-            
-            foreach (var calculator in parkingFeeCalculators)
+
+            foreach (var calculator in _parkingFeeCalculators)
             {
                 if (calculator.IsRuleApplicable(entryTime, exitTime))
                 {

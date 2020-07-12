@@ -30,7 +30,7 @@ namespace ParkingFeeCalculator.API
             services.AddTransient<IParkingFeeCalculatorService, NightRateCalulatorService>();
             services.AddTransient<IParkingFeeCalculatorService, WeekendRateCalculatorService>();
             services.AddTransient<IParkingFeeCalculatorService, StandardRateCalculatorService>();
-            services.AddTransient<FeeRuleSelectorService>();
+            services.AddTransient<IFeeRuleSelectorService, FeeRuleSelectorService>();
 
             services.AddControllers();
         }
