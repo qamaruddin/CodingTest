@@ -36,5 +36,10 @@ namespace ParkingFeeCalculator.API.Services
         {
             return days * 20;
         }
+
+        public bool IsRuleApplicable(DateTime entryTime, DateTime exitTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
