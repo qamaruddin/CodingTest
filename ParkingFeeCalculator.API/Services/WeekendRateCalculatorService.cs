@@ -2,7 +2,7 @@
 
 namespace ParkingFeeCalculator.API.Services
 {
-    public class WeekendRateCalculator : IParkingFeeCalculator
+    public class WeekendRateCalculatorService : IParkingFeeCalculatorService
     {
         public double Calculate(DateTime entryTime, DateTime exitTime)
         {

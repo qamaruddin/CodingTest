@@ -4,26 +4,31 @@ using System;
 
 namespace ParkingFeeCalculator.Tests
 {
-    public class FlatRateCalculatorTests
+    public class RightRateChooseTests
     {
         [Test]
-        public void ShouldPickRightFeeCalculator()
+        public void ShouldUseStandardRate_IfFlatRatesDontMatchConditions()
         {
+            var entryTime = new DateTime(2020, 7, 8, 8, 30, 0);
+            var exitTime = new DateTime(2020, 7, 11, 18, 05, 0);
+
             var earlyBirdCalculator = new EarlyBirdRateCalculatorService();
             var nightRateCalculator = new NightRateCalulatorService();
             var weekendRateCalculator = new WeekendRateCalculatorService();
-
-            DateTime entryTime = new DateTime(2020, 7, 9, 7, 0, 0);
-            DateTime exitTime = new DateTime(2020, 7, 9, 23, 30, 0);
+            var standardRateCalculator = new StandardRateCalculatorService();
 
             var isEarlyBirdRate = earlyBirdCalculator.IsRuleApplicable(entryTime, exitTime);
             var isNightRate = nightRateCalculator.IsRuleApplicable(entryTime, exitTime);
             var isWeekendRate = weekendRateCalculator.IsRuleApplicable(entryTime, exitTime);
+            var isStandardRate = standardRateCalculator.IsRuleApplicable(entryTime, exitTime);
 
-            Assert.IsTrue(isEarlyBirdRate);
+            var fee = standardRateCalculator.Calculate(entryTime, exitTime);
+
+            Assert.IsTrue(isStandardRate);
+            Assert.IsFalse(isEarlyBirdRate);
             Assert.IsFalse(isNightRate);
             Assert.IsFalse(isWeekendRate);
+            Assert.AreEqual(80, fee);
         }
-
     }
 }

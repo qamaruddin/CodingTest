@@ -19,7 +19,7 @@ namespace ParkingFeeCalculator.Tests
         [TestCase(0, 4, 1, 40)]
         public void StandardRateCalculatorTest(int minutes, int hours, int days, double expected)
         {
-            var rateCalculator = new StandardRateCalculator();
+            var rateCalculator = new StandardRateCalculatorService();
 
             var fee = rateCalculator.Calculate(DateTime.Now, DateTime.Now.AddMinutes(minutes).AddHours(hours).AddDays(days));
 

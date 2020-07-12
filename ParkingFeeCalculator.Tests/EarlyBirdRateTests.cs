@@ -6,12 +6,12 @@ namespace ParkingFeeCalculator.Tests
 {
     public class EarlyBirdRateTests
     {
-        private IParkingFeeCalculator parkingFeeCalculator;
+        private IParkingFeeCalculatorService parkingFeeCalculator;
 
         [Test]
         public void EarlyBirdTest()
         {
-            parkingFeeCalculator = new EarlyBirdRateCalculator();
+            parkingFeeCalculator = new EarlyBirdRateCalculatorService();
             DateTime entryTime = new DateTime(2020, 7, 12, 7, 0, 0);
             DateTime exitTime = new DateTime(2020, 7, 12, 23, 30, 0);
 
@@ -25,7 +25,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void EarlyBirdTest_EntryTimeNotMeetingCondition()
         {
-            parkingFeeCalculator = new EarlyBirdRateCalculator();
+            parkingFeeCalculator = new EarlyBirdRateCalculatorService();
             DateTime entryTime = new DateTime(2020, 7, 12, 5, 0, 0);
             DateTime exitTime = new DateTime(2020, 7, 12, 23, 30, 0);
 
@@ -37,7 +37,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void EarlyBirdTest_ExitTimeNotMeetingCondition()
         {
-            parkingFeeCalculator = new EarlyBirdRateCalculator();
+            parkingFeeCalculator = new EarlyBirdRateCalculatorService();
             DateTime entryTime = new DateTime(2020, 7, 12, 6, 0, 0);
             DateTime exitTime = new DateTime(2020, 7, 12, 23, 55, 0);
 

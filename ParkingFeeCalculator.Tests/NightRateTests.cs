@@ -6,12 +6,12 @@ namespace ParkingFeeCalculator.Tests
 {
     public class NightRateTests
     {
-        private IParkingFeeCalculator parkingFeeCalculator;
+        private IParkingFeeCalculatorService parkingFeeCalculator;
 
         [Test]
         public void NightRateTest()
         {
-            parkingFeeCalculator = new NightRateCalulator();
+            parkingFeeCalculator = new NightRateCalulatorService();
             DateTime entryTime = new DateTime(2020, 7, 10, 18, 5, 0);
             DateTime exitTime = new DateTime(2020, 7, 10, 23, 30, 0);
 
@@ -25,7 +25,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void NightRateTest_EntryTimeNotMeetingConditon()
         {
-            parkingFeeCalculator = new NightRateCalulator();
+            parkingFeeCalculator = new NightRateCalulatorService();
             DateTime entryTime = new DateTime(2020, 7, 10, 17, 5, 0);
             DateTime exitTime = new DateTime(2020, 7, 10, 23, 30, 0);
 
@@ -37,7 +37,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void NightRateTest_ExitTimeNotMeetingConditon()
         {
-            parkingFeeCalculator = new NightRateCalulator();
+            parkingFeeCalculator = new NightRateCalulatorService();
             DateTime entryTime = new DateTime(2020, 7, 10, 16, 5, 0);
             DateTime exitTime = new DateTime(2020, 7, 10, 23, 47, 0);
 
@@ -49,7 +49,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void NightRate_EntryIsOnSunday()
         {
-            parkingFeeCalculator = new NightRateCalulator();
+            parkingFeeCalculator = new NightRateCalulatorService();
             DateTime entryTime = new DateTime(2020, 7, 12, 18, 5, 0);
             DateTime exitTime = new DateTime(2020, 7, 12, 23, 30, 0);
 
@@ -61,7 +61,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void NightRate_EntryIsOnSaturday()
         {
-            parkingFeeCalculator = new NightRateCalulator();
+            parkingFeeCalculator = new NightRateCalulatorService();
             DateTime entryTime = new DateTime(2020, 7, 11, 18, 5, 0);
             DateTime exitTime = new DateTime(2020, 7, 11, 23, 30, 0);
 

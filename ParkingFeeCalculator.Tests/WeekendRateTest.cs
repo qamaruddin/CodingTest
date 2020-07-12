@@ -8,12 +8,12 @@ namespace ParkingFeeCalculator.Tests
 {
     public class WeekendRateTest
     {
-        private IParkingFeeCalculator parkingFeeCalculator;
+        private IParkingFeeCalculatorService parkingFeeCalculator;
 
         [Test]
         public void WeekendRateTest_EntryAndExitSunday()
         {
-            parkingFeeCalculator = new WeekendRateCalculator();
+            parkingFeeCalculator = new WeekendRateCalculatorService();
             DateTime entryTime = new DateTime(2020, 7, 12, 0, 0, 0);
             DateTime exitTime = new DateTime(2020, 7, 12, 23, 30, 0);
 
@@ -27,7 +27,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void WeekendRateTest_EntryAndExitSat()
         {
-            parkingFeeCalculator = new WeekendRateCalculator();
+            parkingFeeCalculator = new WeekendRateCalculatorService();
             DateTime entryTime = new DateTime(2020, 7, 11, 0, 0, 0);
             DateTime exitTime = new DateTime(2020, 7, 11, 23, 30, 0);
 
@@ -41,7 +41,7 @@ namespace ParkingFeeCalculator.Tests
         [Test]
         public void WeekendRateTest_EntrySatExitSun()
         {
-            parkingFeeCalculator = new WeekendRateCalculator();
+            parkingFeeCalculator = new WeekendRateCalculatorService();
             DateTime entryTime = new DateTime(2020, 7, 11, 0, 0, 0);
             DateTime exitTime = new DateTime(2020, 7, 12, 23, 30, 0);
 

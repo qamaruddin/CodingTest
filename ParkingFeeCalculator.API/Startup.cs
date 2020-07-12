@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ParkingFeeCalculator.API.Services;
 
 namespace ParkingFeeCalculator.API
 {
@@ -25,6 +26,12 @@ namespace ParkingFeeCalculator.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IParkingFeeCalculatorService, EarlyBirdRateCalculatorService>();
+            services.AddTransient<IParkingFeeCalculatorService, NightRateCalulatorService>();
+            services.AddTransient<IParkingFeeCalculatorService, WeekendRateCalculatorService>();
+            services.AddTransient<IParkingFeeCalculatorService, StandardRateCalculatorService>();
+            services.AddTransient<FeeRuleSelectorService>();
+
             services.AddControllers();
         }
 
