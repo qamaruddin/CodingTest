@@ -39,7 +39,7 @@ namespace ParkingFeeCalculator.API.Services
 
         public bool IsRuleApplicable(DateTime entryTime, DateTime exitTime)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

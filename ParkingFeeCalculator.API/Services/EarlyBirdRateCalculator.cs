@@ -16,8 +16,8 @@ namespace ParkingFeeCalculator.API.Services
             var earlyBirdExitStart = new DateTime(entryTime.Year, entryTime.Month, entryTime.Day, 15, 30, 0);
             var earlyBirdExitEnd = earlyBirdExitStart.AddHours(8);
 
-            return (entryTime >= earlyBirdEntryStart && entryTime <= earlyBirdEntryEnd
-                 && exitTime >= earlyBirdExitStart && exitTime <= earlyBirdExitEnd);
+            return (entryTime >= earlyBirdEntryStart && entryTime <= earlyBirdEntryEnd)
+                 && (exitTime >= earlyBirdExitStart && exitTime <= earlyBirdExitEnd);
         }
     }
 }

@@ -12,12 +12,12 @@ namespace ParkingFeeCalculator.API.Services
         public bool IsRuleApplicable(DateTime entryTime, DateTime exitTime)
         {
             var nightRateEntryStart = new DateTime(entryTime.Year, entryTime.Month, entryTime.Day, 18, 0, 0);
-            var nightRateEntryExit = nightRateEntryStart.AddHours(6);
+            var nightRateEntryExit = new DateTime(entryTime.Year, entryTime.Month, entryTime.Day, 23, 59, 59);
             var nightRateExitStart = new DateTime(entryTime.Year, entryTime.Month, entryTime.Day, 15, 30, 0);
-            var nightRateExitEnd = nightRateExitStart.AddHours(8);
+            var nightRateExitEnd = new DateTime(entryTime.Year, entryTime.Month, entryTime.Day, 23, 30, 0);
 
-            return ((entryTime.DayOfWeek != DayOfWeek.Saturday || entryTime.DayOfWeek != DayOfWeek.Sunday)
-                 && entryTime >= nightRateEntryStart && entryTime <= nightRateEntryExit && exitTime >= nightRateExitStart && exitTime <= nightRateExitEnd);
+            return ((entryTime.DayOfWeek != DayOfWeek.Saturday && entryTime.DayOfWeek != DayOfWeek.Sunday)
+                 && ((entryTime >= nightRateEntryStart & entryTime <= nightRateEntryExit) && (exitTime >= nightRateExitStart && exitTime <= nightRateExitEnd)));
         }
     }
 }
