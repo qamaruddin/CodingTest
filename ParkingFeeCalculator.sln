@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingFeeCalculator.API", "ParkingFeeCalculator.API\ParkingFeeCalculator.API.csproj", "{D9163B1C-676C-452D-A68F-5CE8ED6FAC99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingFeeCalculator.Tests", "ParkingFeeCalculator.Tests\ParkingFeeCalculator.Tests.csproj", "{9DE30E1F-8265-4C7F-BF4E-F249F70D82C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9163B1C-676C-452D-A68F-5CE8ED6FAC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9163B1C-676C-452D-A68F-5CE8ED6FAC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9163B1C-676C-452D-A68F-5CE8ED6FAC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9163B1C-676C-452D-A68F-5CE8ED6FAC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE30E1F-8265-4C7F-BF4E-F249F70D82C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE30E1F-8265-4C7F-BF4E-F249F70D82C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE30E1F-8265-4C7F-BF4E-F249F70D82C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE30E1F-8265-4C7F-BF4E-F249F70D82C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE27A690-E7DD-49E4-8A59-E5009B6970E6}
+	EndGlobalSection
+EndGlobal
