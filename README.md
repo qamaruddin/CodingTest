@@ -9,7 +9,7 @@ Current code coverage is sitting at ~90%.
 Moq is used to mock some of the depedencies.
 To run the unit tests, simply open the project in VS and from test menu run all tests.
 
-# Consumign API endpoint
+# Consuming API endpoint
 To consume API endpoint you can either use postman (preferred) or chrome. There is only single REST GET endpoint which accepts a entry time and exit time.
 A sample request while running the api locally is :- https://localhost:44331/Calculator?entrytime=7/11/2020 9:33:10 AM&exitTime=7/11/2020 18:33:10 PM
 
