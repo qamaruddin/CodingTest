@@ -31,7 +31,7 @@ namespace ParkingFeeCalculator.API.Controllers
                 }
                 if (model.EntryTime == DateTime.MinValue || model.ExitTime == DateTime.MinValue)
                 {
-                    return BadRequest("Dates are valid.");
+                    return BadRequest("Dates are not valid.");
                 }
                 if (model.EntryTime > model.ExitTime)
                 {
